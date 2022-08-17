@@ -41,7 +41,7 @@ const getList = () => {
       listOne.value = res.data.footerListOne;
       listTwo.value = res.data.footerListTwo;
     }
-    console.log("listOne:::::", listOne.value, listTwo.value);
+    // console.log("listOne:::::", listOne.value, listTwo.value);
   });
 };
 
