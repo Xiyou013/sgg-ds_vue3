@@ -27,3 +27,17 @@ export function getImageList() {
         method: 'get'
     })
 }
+
+export function getFineList() {
+    return axios({
+        url: '/api/home/fineList',
+        method: 'get'
+    })
+}
+
+export function getSellList() {
+    return axios({
+        url: '/api/home/sellList',
+        method: 'get'
+    })
+}
