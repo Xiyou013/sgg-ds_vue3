@@ -15,7 +15,9 @@
           <span>{{ item.name }}</span>
         </div>
       </div>
-      <div class="middleList"></div>
+      <div class="middleList">
+        <img class="shufflingImg" :src="shufflingUrl" alt="" />
+      </div>
       <div class="rightList">
         <div class="topDiv">
           <div class="topTitle">
@@ -49,6 +51,7 @@ import { ref } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
 
 const imageUrl = require("/src/assets/bottom-bg-img.png");
+const shufflingUrl = require("/src/assets/shuffling/shuffling02.png");
 let listMenu = ref(null);
 let leftList = ref(null);
 let topList = ref(null);
@@ -159,7 +162,14 @@ onMounted(() => {
     }
     .middleList {
       width: calc(100% - 380px);
+      height: 440px;
       //   background-color: darksalmon;
+      .shufflingImg {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        object-fit: contain;
+      }
     }
     .rightList {
       width: 201px;

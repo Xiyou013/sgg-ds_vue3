@@ -1,6 +1,12 @@
 import axios from 'axios'
 import { ElMessage, ElLoading } from 'element-plus'
 // import router from '../router/index.js'
+import nprogress from 'nprogress'
+// 引入进度条样式
+import "nprogress/nprogress.css"
+// start: 进度条开始  done：进度条结束
+
+// console.log('nprogress::::', nprogress);
 
 
 let loading        //定义loading变量
@@ -20,6 +26,7 @@ function endLoading() {    //使用Element loading-close 方法
 axios.interceptors.request.use(config => {
     // 加载
     startLoading()
+    nprogress.start()
     if (localStorage.eleToken)
         config.headers.Authorization = localStorage.eleToken
     return config
@@ -30,6 +37,7 @@ axios.interceptors.request.use(config => {
 // 响应拦截  401 token过期处理
 axios.interceptors.response.use(response => {
     endLoading()
+    nprogress.done()
     // return response.data
     return response
 }, error => {

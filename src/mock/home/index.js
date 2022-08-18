@@ -52,6 +52,22 @@ let imageList = [
     { id: 12, name: '母婴', icon: require('@/assets/svg/mom-infant-icom.svg'), path: '' },
 ]
 
+let fineList = [
+    { id: 1, name: '限定礼盒', price: '128', path: '', img: require('@/assets/todayFine/fine-thing03.png') },
+    { id: 2, name: '可莉手办', price: '388', path: '', img: require('@/assets/todayFine/fine-thing02.png') },
+]
+
+let sellList = [
+    { id: 1, tag: '【原神】', name: '2022好运福袋388元档 Genshin', price: '388', path: '', img: require('@/assets/sellFine/lucky-bag.png'), newFlag: true },
+    { id: 2, tag: '【原神】', name: '命定之日系列套装 Genshin', price: '58', path: '', img: require('@/assets/sellFine/postcards.png'), newFlag: true },
+    { id: 3, tag: '【原神】', name: '雷电将军印象服饰系列 帆布包 Genshin', price: '119', path: '', img: require('@/assets/sellFine/canvas-bag01.png'), newFlag: true },
+    { id: 4, tag: '【原神】', name: '宵宫印象服饰系列 帆布包 Genshin', price: '119', path: '', img: require('@/assets/sellFine/canvas-bag02.png'), newFlag: true },
+    { id: 5, tag: '【原神】', name: '小派蒙1/7静态手办 Genshin', price: '229', path: '', img: require('@/assets/sellFine/garage-kits01.png'), newFlag: false },
+    { id: 6, tag: '【原神】', name: '犬坂吠吠马克杯 Genshin', price: '129', path: '', img: require('@/assets/sellFine/mark-cup01.png'), newFlag: true },
+    { id: 7, tag: '【原神】', name: 'Q版任务系列 卡套 Genshin', price: '58', path: '', img: require('@/assets/sellFine/card-set01.png'), newFlag: true },
+    { id: 8, tag: '【原神】', name: 'Q版人物系列 便签贴立牌 Genshin', price: '49', path: '', img: require('@/assets/sellFine/sticky-notes01.png'), newFlag: true },
+]
+
 const getListMenu = Mock.mock('/api/home/listMenu', 'get', () => {
     return listMenu
 })
@@ -68,9 +84,19 @@ const getImageList = Mock.mock('/api/home/imageList', 'get', () => {
     return imageList
 })
 
+const getFineList = Mock.mock('/api/home/fineList', 'get', () => {
+    return fineList
+})
+
+const getSellList = Mock.mock('/api/home/sellList', 'get', () => {
+    return sellList
+})
+
 export default {
     getListMenu,
     getLeftList,
     getTopList,
     getImageList,
+    getFineList,
+    getSellList,
 }
